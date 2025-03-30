@@ -133,6 +133,39 @@ h2 {
     gap: 0.5rem;
 }
 
+.skill-item {
+    position: relative;
+}
+
+.skill-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #404040;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.skill-item:hover .skill-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.skill-level {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
 .skill-tag {
     background: #404040;
     padding: 0.5rem 1rem;
@@ -518,4 +551,14 @@ body.light-theme .about-me p {
 
 body.light-theme .education-period {
     border-right: 2px solid #eee;
+}
+
+/* Light theme styles for dropdown */
+body.light-theme .skill-dropdown {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.light-theme .skill-level {
+    color: #333;
 } 
