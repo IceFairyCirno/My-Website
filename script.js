@@ -70,18 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('.theme-icon');
 
-    // 检查本地存储中的主题设置
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
         themeIcon.textContent = '☀️';
     }
 
-    // 主题切换功能
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
         
-        // 更新图标
         if (document.body.classList.contains('light-theme')) {
             themeIcon.textContent = '☀️';
             localStorage.setItem('theme', 'light');
