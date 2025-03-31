@@ -90,4 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'dark');
         }
     });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // 使用 mailto 链接发送邮件
+            const mailtoLink = `mailto:dicky.ling1026@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Email: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            window.location.href = mailtoLink;
+        });
+    }
 }); 
