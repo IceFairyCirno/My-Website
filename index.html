@@ -1,115 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Dicky Ling</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="home-header">
-        <div class="theme-toggle">
-            <button id="theme-toggle" class="theme-toggle-btn">
-                <span class="theme-icon">🌙</span>
-            </button>
-        </div>
-        <div class="profile-container">
-            <div class="profile-flip">
-                <div class="profile-front">
-                    <img src="img/Cirno.png" alt="Photo of me" class="profile-img">
-                </div>
-                <div class="profile-back">
-                    <img src="img/MyProfilePic.jpg" alt="Another photo of me" class="profile-img">
-                </div>
-            </div>
-        </div>
-        <h1>Ling Chun Ho</h1>
-        <p class="subtitle">Computer Science & Finance</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dicky Ling</title>
+    <meta name="description" content="A scrollable personal website with an icy arctic theme." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Go to home">❄ IceFairyCirno</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#vision" class="nav-link">Vision</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="work.html">Work Experiences</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="education.html">Education Background</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <main>
+      <section id="home" class="section hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1 class="hero-title">I am IceFairyCirno</h1>
+            <p class="hero-subtitle">
+              I am a <span class="highlight">CS</span> student and a "Developer" from Hong Kong who 
+              loves to code interting and useful stuff in my free time.
+              I am also into <span class="highlight">gaming</span> and <span class="highlight">anime</span>, 
+              and <span class="highlight">make friends</span> with people from all over the world.
+            </p>
+            <div class="hero-cta">
+              <a href="https://discord.com/users/del_luna" class="social-btn discord" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="del_luna">
+                <i class='bx bxl-discord-alt'></i>
+              </a>
+              <a href="https://github.com/IceFairyCirno" class="social-btn github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="IceFairy_Cirno">
+                <i class='bx bxl-github'></i>
+              </a>
+              <a href="https://www.linkedin.com/in/chun-ho-ling-0aa909336" class="social-btn linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn", title="Chun Ho Ling">
+                <i class='bx bxl-linkedin'></i>
+              </a>
+              <a href="https://www.instagram.com/ch.l_1026" class="social-btn instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="ch.l_1026">
+                <i class='bx bxl-instagram'></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <div class="photo-carousel">
+              <img id="profilePhoto" src="assets/profile_pic.png" alt="Your portrait" title="⑨⑨⑨⑨⑨⑨⑨⑨⑨"/>
+              <button class="carousel-btn prev-btn" aria-label="Previous photo">‹</button>
+              <button class="carousel-btn next-btn" aria-label="Next photo">›</button>
+              <div class="carousel-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="split-layout">
-        <div class="about-sidebar">
-            <h2>About me</h2>
-            <p class="intro">
-                I'm a HKU year 2 computer science major with a minor in finance, driven by a passion for technology and its endless possibilities. 
-            </p>
-            <p class="vision">
-                My goal is to blend my technical skills and interests into innovative projects that make an impact, all while enjoying the process!
-            </p>
-        </div>
-        
-        <div class="academic-stats">
-            <div class="stat-item">
-                <div class="stat-value">2.91</div>
-                <div class="stat-label">CGPA</div>
+      <section id="vision" class="section">
+        <div class="container">
+          <h2 class="section-title">Vision</h2>
+          <div class="vision-grid">
+            <div class="vision-card glass">
+              <h3>My Vision</h3>
+              <p>
+                I am open to learn anything in any field as long as it is <span class="highlight">interesting</span> and <span class="highlight">useful</span>. 
+                I consider AI as a <span class="highlight">Tool</span> to help me in my learning process, and I am open to use it in my projects 
+                with extra caution in <span class="highlight">data privacy</span> and <span class="highlight">security</span>.
+                But that doesn't mean I will rely on it too much, I will still learn the basics before using it and try to understand how it works.
+              </p>
             </div>
-            <div class="stat-item">
-                <div class="stat-value">2+</div>
-                <div class="stat-label">Projects</div>
+            <div class="vision-card glass">
+              <h3>Skills</h3>
+              <ul class="tags">
+                <li><i class='bx bxl-python'></i> Python</li>
+                <li><i class='bx bxl-html5'></i> HTML</li>
+                <li><i class='bx bxl-css3'></i> CSS</li>
+                <li><i class='bx bxl-javascript'></i> JavaScript</li>
+                <li><i class='bx bxl-java'></i> Java</li>
+                <li><i class='bx bxl-c-plus-plus'></i> C++</li>
+                <li><i class='bx bxl-android'></i> Android Studio</li>
+                <li><i class='bx bx-code' ></i> Kotlin</li>
+                <li><i class='bx bx-code-curly'></i> JSON</li>
+                <li><i class='bx bx-code-alt'></i> XML</li>
+              </ul>
             </div>
+          </div>
         </div>
-        
-        <div class="interests-blocks">
-            <h2 class="interests-title">My Interests</h2>
-            <div class="interest-container">
-                <button class="interest-nav prev">←</button>
-                <div class="interest-content">
-                    <div class="interest-block active" data-interest="gaming">
-                        <div class="interest-icon">
-                            <img src="img/gaming.png" alt="Gaming Icon">
-                        </div>
-                        <h3>Gaming</h3>
-                        <p>Passionate about playing games and exploring different gaming experiences across various genres and platforms.</p>
-                    </div>
-                    
-                    <div class="interest-block" data-interest="gamedev">
-                        <div class="interest-icon">
-                            <img src="img/gamedev.png" alt="Game Development Icon">
-                        </div>
-                        <h3>Game Development</h3>
-                        <p>Creating games by exploring game mechanics, graphics, and interactive experiences through coding and design.</p>
-                    </div>
-                    
-                    <div class="interest-block" data-interest="web">
-                        <div class="interest-icon">
-                            <img src="img/web.png" alt="Web Development Icon">
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Building responsive and interactive websites using modern technologies and frameworks.</p>
-                    </div>
-                    
-                    <div class="interest-block" data-interest="ml">
-                        <div class="interest-icon">
-                            <img src="img/ml.png" alt="Machine Learning Icon">
-                        </div>
-                        <h3>Machine Learning</h3>
-                        <p>Exploring algorithms and models that enable computers to learn from data and make intelligent decisions.</p>
-                    </div>
-                    
-                    <div class="interest-block" data-interest="llm">
-                        <div class="interest-icon">
-                            <img src="img/llm.png" alt="LLM Icon">
-                        </div>
-                        <h3>Large Language Models</h3>
-                        <p>Studying and experimenting with advanced language models and their applications in natural language processing.</p>
-                    </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card glass" style="--project-bg: url('assets/touhou_game_clone_cover2.jpg');">
+              <h3>Touhou game clone</h3>
+              <p>A game clone of Touhou Project with <span class="highlight">Pygame</span>, a "popular" bullet hell game series.</p>
+              <a href="https://github.com/IceFairyCirno/Touhou10" class="link">Explore</a>
+            </article>
+            <article class="project-card glass" style="--project-bg: url('assets/chatbot_cover.webp');">
+              <h3>AI-powered Assistant</h3>
+              <p>A Chatbot with <span class="highlight">Python</span> linked to <span class="highlight">LLM</span> that can voice controlled and help with tasks.</p>
+              <a href="#" class="link">In progress</a>
+            </article>
+            <article class="project-card glass" style="--project-bg: url('assets/fitness_cover.jpg');">
+              <h3>Fitness Tracker</h3>
+              <p>An <span class="highlight">Native Android App</span> that tracks my fitness progress and helps me stay fit.</p>
+              <a href="#" class="link">Explore</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="container">
+          <h2 class="section-title">Education & Experience</h2>
+          <div class="education-experience-grid">
+            <div class="education-section">
+              <h3 class="subsection-title">Education</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>BEng - Computer Science</h3>
+                    <p>The University of Hong Kong — 2023 – Now</p>
+                  </div>
                 </div>
-                <button class="interest-nav next">→</button>
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Chemistry & Physics & Calculus</h3>
+                    <p>AOGHSS - 2017 - 2023</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="interest-dots"></div>
+            
+            <div class="experience-section">
+              <h3 class="subsection-title">Experience</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Summer Programmer Trainee</h3>
+                    <p>Wafer System Ltd. - June 2025 – Now</p>
+                    <p>Took part in the LCSD Smart Library System team, learning practial <span class="highlight">Web Development</span> skills</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Student Teaching Assistant</h3>
+                    <p>HKU - Sep 2024 – Dec 2024</p>
+                    <p>Provide <span class="highlight">Tutorials</span> for Python Introduction Course (ENGG1330) to Year1 students for a semester</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <form class="contact-form glass" action="https://formspree.io/f/xyzpvnon" method="POST">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>⑨ <span id="year"></span> Dicky Ling. All rights reserved. Funky❄</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+  </html>
+
+
+
