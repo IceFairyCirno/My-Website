@@ -15,6 +15,10 @@ navLinks.forEach(link => {
     });
 });
 
+document.getElementById("downloadCv").onclick = function() {
+    window.alert("Nice Try Diddy\nContact Me for My CV")
+};
+
 const sections = document.querySelectorAll('section');
 const linkById = new Map(
     Array.from(navLinks).map(link => [link.getAttribute('href')?.slice(1), link])
