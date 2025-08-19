@@ -140,3 +140,90 @@ contactForm.addEventListener('submit', function(e) {
     // Form will submit to Formspree automatically
     // You can add additional validation here if needed
 });
+
+// ==== Snowfall background (respect reduced motion) ====
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const snowCanvas = document.getElementById('snowCanvas');
+if (snowCanvas && !prefersReducedMotion) {
+  const ctx = snowCanvas.getContext('2d');
+  let width = snowCanvas.width = window.innerWidth;
+  let height = snowCanvas.height = window.innerHeight;
+
+  const flakes = [];
+  const FLAKE_COUNT = Math.min(180, Math.floor((width * height) / 30000));
+  const TWO_PI = Math.PI * 2;
+
+  const rand = (min, max) => Math.random() * (max - min) + min;
+
+  function createFlake() {
+    const size = rand(1, 3.2);
+    return {
+      x: rand(0, width),
+      y: rand(-height, 0),
+      r: size,
+      speedY: rand(0.25, 0.9) + size * 0.05,
+      driftX: rand(-0.4, 0.4),
+      phase: rand(0, TWO_PI)
+    };
+  }
+
+  for (let i = 0; i < FLAKE_COUNT; i++) flakes.push(createFlake());
+
+  function resize() {
+    width = snowCanvas.width = window.innerWidth;
+    height = snowCanvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+
+  let lastTime = 0;
+  function tick(ts) {
+    const dt = Math.min(32, ts - lastTime);
+    lastTime = ts;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(200, 240, 255, 0.9)';
+    ctx.shadowColor = 'rgba(111,211,255,0.4)';
+    ctx.shadowBlur = 6;
+
+    for (let i = 0; i < flakes.length; i++) {
+      const f = flakes[i];
+      f.y += f.speedY * (dt / 16);
+      f.x += Math.sin((f.y + f.phase) * 0.01) * 0.4 + f.driftX * (dt / 16);
+
+      if (f.y - f.r > height) {
+        flakes[i] = createFlake();
+        flakes[i].y = -f.r;
+      }
+
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, TWO_PI);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// ==== Subtle 3D tilt on project cards ====
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+  let rafId = null;
+  function onMove(e) {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const rx = (0.5 - y) * 6;
+    const ry = (x - 0.5) * 6;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+  }
+  function reset() {
+    if (rafId) cancelAnimationFrame(rafId);
+    card.style.transform = '';
+  }
+  card.addEventListener('mousemove', onMove);
+  card.addEventListener('mouseleave', reset);
+});
