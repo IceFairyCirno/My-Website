@@ -227,3 +227,44 @@ projectCards.forEach(card => {
   card.addEventListener('mousemove', onMove);
   card.addEventListener('mouseleave', reset);
 });
+
+// ==== Ice crystal particle effects ====
+function createIceParticle() {
+  const particle = document.createElement('div');
+  particle.className = 'ice-particle';
+  particle.innerHTML = '❄';
+  particle.style.cssText = `
+    position: fixed;
+    pointer-events: none;
+    font-size: ${Math.random() * 8 + 8}px;
+    color: rgba(200, 241, 255, 0.8);
+    z-index: 9999;
+    left: ${Math.random() * window.innerWidth}px;
+    top: -20px;
+    animation: ice-fall ${Math.random() * 3 + 2}s linear forwards;
+  `;
+  document.body.appendChild(particle);
+  
+  setTimeout(() => {
+    if (particle.parentNode) {
+      particle.parentNode.removeChild(particle);
+    }
+  }, 5000);
+}
+
+// Add CSS for ice particles
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes ice-fall {
+    to {
+      transform: translateY(${window.innerHeight + 20}px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// Create ice particles periodically (respect reduced motion)
+if (!prefersReducedMotion) {
+  setInterval(createIceParticle, 2000);
+}

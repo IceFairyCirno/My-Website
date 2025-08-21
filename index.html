@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dicky Ling</title>
     <meta name="description" content="A scrollable personal website with an icy arctic theme." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/Blue_circled_9.png" />
+    <link rel="icon" type="image/png" sizes="24x24" href="assets/Blue_circled_9.png" />
+    <link rel="apple-touch-icon" href="assets/Blue_circled_9.png" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -16,7 +22,9 @@
     <div class="aurora" aria-hidden="true"></div>
     <header class="site-header" id="header">
       <div class="container header-inner">
-        <a class="brand" href="#home" aria-label="Go to home">❄ IceFairyCirno</a>
+        <a class="brand" href="#home" aria-label="Go to home">
+          IceFairyCirno
+        </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <nav class="site-nav" id="siteNav">
           <ul>
@@ -80,7 +88,7 @@
               <h3>My Vision</h3>
               <p>
                 I am open to learn anything in any field as long as it is <span class="highlight">interesting</span> and <span class="highlight">useful</span>. 
-                I consider AI as a <span class="highlight">Tool</span> to help me in my learning process, and I am open to use it in my projects 
+                I consider <span class="highlight">AI</span> as a <span class="highlight">Tool</span> to help me in my learning process, and I am open to use it in my projects 
                 with extra caution in <span class="highlight">data privacy</span> and <span class="highlight">security</span>.
                 But that doesn't mean I will rely on it too much, I will still learn the basics before using it and try to understand how it works.
               </p>
@@ -109,19 +117,25 @@
           <h2 class="section-title">Projects</h2>
           <div class="projects-grid">
             <article class="project-card glass" style="--project-bg: url('assets/touhou_game_clone_cover2.jpg');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
               <h3>Touhou game clone</h3>
               <p>A game clone of Touhou Project with <span class="highlight">Pygame</span>, a "popular" bullet hell game series.</p>
               <a href="https://github.com/IceFairyCirno/Touhou10" class="link">Explore</a>
             </article>
             <article class="project-card glass" style="--project-bg: url('assets/chatbot_cover.webp');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
               <h3>AI-powered Assistant</h3>
               <p>A Chatbot with <span class="highlight">Python</span> linked to <span class="highlight">LLM</span> that can voice controlled and help with tasks.</p>
               <a href="#" class="link">In progress</a>
             </article>
             <article class="project-card glass" style="--project-bg: url('assets/fitness_cover.jpg');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
               <h3>Fitness Tracker</h3>
               <p>An <span class="highlight">Native Android App</span> that tracks my fitness progress and helps me stay fit.</p>
-              <a href="#" class="link">Explore</a>
+              <a href="https://github.com/IceFairyCirno/BornAgain" class="link">Explore</a>
             </article>
           </div>
         </div>
@@ -201,6 +215,11 @@
     <footer class="site-footer">
       <div class="container">
         <p>⑨ <span id="year"></span> Dicky Ling. All rights reserved. Funky❄</p>
+        <div class="footer-crystals">
+          <span class="crystal">❄</span>
+          <span class="crystal">❅</span>
+          <span class="crystal">❆</span>
+        </div>
       </div>
     </footer>
 
