@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dicky Ling</title>
+    <meta name="description" content="A scrollable personal website with an icy arctic theme." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/Blue_circled_9.png" />
+    <link rel="icon" type="image/png" sizes="24x24" href="assets/Blue_circled_9.png" />
+    <link rel="apple-touch-icon" href="assets/Blue_circled_9.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="snowCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+    <div class="aurora" aria-hidden="true"></div>
+    <header class="site-header" id="header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Go to home">
+          IceFairyCirno
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#vision" class="nav-link">Vision</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Edu/Exp</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#" id="downloadCv">Download My CV</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="section hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1 class="hero-title">I am IceFairyCirno</h1>
+            <p class="hero-subtitle">
+              I am a <span class="highlight">CS</span> student and a "Developer" from Hong Kong who 
+              loves to code interesting and useful stuff in my free time.
+              I am also into <span class="highlight">gaming</span> and <span class="highlight">anime</span>, 
+              and <span class="highlight">make friends</span> with people from all over the world.
+            </p>
+            <div class="hero-cta">
+              <a href="https://discord.com/users/del_luna" class="social-btn discord" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="del_luna">
+                <i class='bx bxl-discord-alt'></i>
+              </a>
+              <a href="https://github.com/IceFairyCirno" class="social-btn github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="IceFairy_Cirno">
+                <i class='bx bxl-github'></i>
+              </a>
+              <a href="https://www.linkedin.com/in/chun-ho-ling-0aa909336" class="social-btn linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn", title="Chun Ho Ling">
+                <i class='bx bxl-linkedin'></i>
+              </a>
+              <a href="https://www.instagram.com/ch.l_1026" class="social-btn instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="ch.l_1026">
+                <i class='bx bxl-instagram'></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <div class="photo-carousel">
+              <img id="profilePhoto" src="assets/profile_pic.png" alt="Your portrait" title="⑨⑨⑨⑨⑨⑨⑨⑨⑨"/>
+              <button class="carousel-btn prev-btn" aria-label="Previous photo">‹</button>
+              <button class="carousel-btn next-btn" aria-label="Next photo">›</button>
+              <div class="carousel-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision" class="section">
+        <div class="container">
+          <h2 class="section-title">Vision</h2>
+          <div class="vision-grid">
+            <div class="vision-card glass">
+              <h3>My Vision</h3>
+              <p>
+                I am open to learn anything in any field as long as it is <span class="highlight">interesting</span> and <span class="highlight">useful</span>. 
+                I consider <span class="highlight">AI</span> as a <span class="highlight">Tool</span> to help me in my learning process, and I am open to use it in my projects 
+                with extra caution in <span class="highlight">data privacy</span> and <span class="highlight">security</span>.
+                But that doesn't mean I will rely on it too much, I will still learn the basics before using it and try to understand how it works.
+              </p>
+            </div>
+            <div class="vision-card glass">
+              <h3>Skills</h3>
+              <ul class="tags">
+                <li><i class='bx bxl-python'></i> Python</li>
+                <li><i class='bx bxl-html5'></i> HTML</li>
+                <li><i class='bx bxl-css3'></i> CSS</li>
+                <li><i class='bx bxl-javascript'></i> JavaScript</li>
+                <li><i class='bx bxl-java'></i> Java</li>
+                <li><i class='bx bxl-c-plus-plus'></i> C++</li>
+                <li><i class='bx bxl-android'></i> Android Studio</li>
+                <li><i class='bx bx-code' ></i> Kotlin</li>
+                <li><i class='bx bx-code-curly'></i> JSON</li>
+                <li><i class='bx bx-code-alt'></i> XML</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card glass" style="--project-bg: url('assets/touhou_game_clone_cover2.jpg');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
+              <h3>Touhou game clone</h3>
+              <p>A game clone of Touhou Project with <span class="highlight">Pygame</span>, a "popular" bullet hell game series.</p>
+              <a href="https://github.com/IceFairyCirno/Touhou10" class="link">Explore</a>
+            </article>
+            <article class="project-card glass" style="--project-bg: url('assets/chatbot_cover.webp');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
+              <h3>AI-powered Assistant</h3>
+              <p>A Chatbot with <span class="highlight">Python</span> linked to <span class="highlight">LLM</span> that can voice controlled and help with tasks.</p>
+              <a href="#" class="link">In progress</a>
+            </article>
+            <article class="project-card glass" style="--project-bg: url('assets/fitness_cover.jpg');">
+              <div class="crystal-corner top-left"></div>
+              <div class="crystal-corner bottom-right"></div>
+              <h3>Fitness Tracker</h3>
+              <p>An <span class="highlight">Native Android App</span> that tracks my fitness progress and helps me stay fit.</p>
+              <a href="https://github.com/IceFairyCirno/BornAgain" class="link">Explore</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="container">
+          <h2 class="section-title">Education & Experience</h2>
+          <div class="education-experience-grid">
+            <div class="education-section">
+              <h3 class="subsection-title">Education</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>BEng - Computer Science</h3>
+                    <p>The University of Hong Kong — 2023 – Now</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Chemistry & Physics & Calculus</h3>
+                    <p>AOGHSS - 2017 - 2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="experience-section">
+              <h3 class="subsection-title">Experience</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Summer Programmer Trainee</h3>
+                    <p>Wafer System Ltd. - June 2025 – Now</p>
+                    <p>Took part in the LCSD Smart Library System team, learning practial <span class="highlight">Web Development</span> skills</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content glass">
+                    <h3>Student Teaching Assistant</h3>
+                    <p>HKU - Sep 2024 – Dec 2024</p>
+                    <p>Provide <span class="highlight">Tutorials</span> for Python Introduction Course (ENGG1330) to Year1 students for a semester</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <form class="contact-form glass" action="https://formspree.io/f/xyzpvnon" method="POST">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>⑨ <span id="year"></span> Dicky Ling. All rights reserved. Funky❄</p>
+        <div class="footer-crystals">
+          <span class="crystal">❄</span>
+          <span class="crystal">❅</span>
+          <span class="crystal">❆</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+  </html>
+
+
+
